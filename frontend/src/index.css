@@ -3,7 +3,6 @@
 html {
   background: var(--table-hover-bg);
   font-family: Inter, "serif";
-  scrollbar-color: auto;
 }
 
 :root {
