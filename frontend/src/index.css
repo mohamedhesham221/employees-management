@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+  background: var(--table-hover-bg);
+  font-family: Inter, "serif";
+  scrollbar-color: auto;
+}
+
+:root {
+  --table-bg: #FFFFFF;
+  --table-border: #E5E7EB;
+  --table-header-text: #6B7280;
+  --table-row-text: #374151;
+  --table-hover-bg: #F9FAFB;
+  --accent-blue: #3B82F6;
+  --accent-green: #10B981;
+  --accent-red: #EF4444;
+  --main-bg: #111725;
+  --text-color: #111725;
+}
