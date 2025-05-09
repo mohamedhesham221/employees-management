@@ -104,7 +104,7 @@ const Employees = () => {
 	return (
 		<>
 			<PageHeader />
-			<main className="text-[var(--text-color)] py-4 px-5 lg:px-22 bg-[#f9fbfc]">
+			<main className="text-[var(--text-color)] py-4 px-5 lg:px-22 bg-[#f9fbfc] min-h-full">
 				<section className="flex justify-between items-center">
 					<h1 className="italic md:text-3xl">Employees</h1>
 					<button
@@ -157,6 +157,8 @@ const Employees = () => {
 									searchText={searchText}
 								/>
 							</table>
+						</div>
+					)}
 							<div className="text-[var(--text-color)] flex flex-wrap justify-between items-center mt-3">
 								<p>
 									<b>{currentPage}</b> out of {totalPages}
@@ -167,8 +169,6 @@ const Employees = () => {
 									totalPages={totalPages}
 								/>
 							</div>
-						</div>
-					)}
 				</div>
 			</main>
 			{/* Modals */}

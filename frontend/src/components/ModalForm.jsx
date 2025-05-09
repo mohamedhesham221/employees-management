@@ -33,7 +33,6 @@ const ModalForm = ({ type, id }) => {
 		role,
 		salary,
 	} = dataWillEdit?.data || {};
-	console.log(dataWillEdit);
 
 	const {
 		register,
