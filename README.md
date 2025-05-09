@@ -52,11 +52,11 @@ A professional employee management application with authentication and CRUD oper
 
 ## 🚀 Live Preview
 
-Check out the live version here: []()
+Check out the live version here: [Employees managment](https://employees-management-6wvd.vercel.app/)
 
 ## 📂 Folder Structure
 
-crud-app/
+```crud-app/
 ├── frontend/
 │   ├── node_modules
 │   ├── public
@@ -79,6 +79,7 @@ crud-app/
 │   ├── vite.config.js
 │   └── .gitignore
 └── README.md
+```
 
 ## Installation
 
