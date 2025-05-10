@@ -46,8 +46,8 @@ const SignUp = () => {
 
 		try {
 			await registerUser(email, password, name)
-			console.log("registeration success");
-			setMessage("successed");
+			console.log("Registeration success");
+			setMessage("success");
 			setTimeout(() => {
 				navigate("/sign-in")
 			}, 1500);

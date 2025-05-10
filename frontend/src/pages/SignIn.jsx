@@ -24,7 +24,7 @@ const SignIn = () => {
 		try {
 			await signInUser(email, password);
 			console.log("login success");
-			setMessage("successed");
+			setMessage("success");
 			setTimeout(() => { // Navigate after delay
 				navigate("/employees");
 			}, 1500);

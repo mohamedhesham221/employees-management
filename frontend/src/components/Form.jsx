@@ -124,12 +124,12 @@ const Form = ({
 				className={`flex items-center justify-start gap-2 ${
 					message ? "block " : "hidden "
 				} ${
-					message === "successed"
+					message === "success"
 						? "text-[var(--accent-green)]"
 						: "text-[var(--accent-red)]"
 				} mt-4`}
 			>
-				{message === "successed" ? (
+				{message === "success" ? (
 					<img src={images.checkmark} alt="Checkmark Icon" />
 				) : (
 					<img src={images.wrongSign} alt="Wrong Icon" />

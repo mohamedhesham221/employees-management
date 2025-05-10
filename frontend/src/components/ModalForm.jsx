@@ -121,7 +121,7 @@ const ModalForm = ({ type, id }) => {
 							label="name"
 							inputType="text"
 							requiredMsg="Name is required"
-							patternVal={/^[A-Za-z ]+$/}
+							patternVal={/^[A-Za-z\s]+$/}
 							patternMsg="Please type a real name"
 							placeholder="e.g:- John Doe"
 						/>
@@ -232,7 +232,7 @@ const ModalForm = ({ type, id }) => {
 							register={register}
 							errors={errors}
 							label="rate"
-							inputType="number"
+							inputType="text"
 							requiredMsg="Rate is required"
 							placeholder="rating"
 							patternMin={0}

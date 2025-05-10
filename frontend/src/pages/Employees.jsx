@@ -104,7 +104,7 @@ const Employees = () => {
 	return (
 		<>
 			<PageHeader />
-			<main className="text-[var(--text-color)] py-4 px-5 lg:px-22 bg-[#f9fbfc] min-h-full">
+			<main className="text-[var(--text-color)] py-4 px-5 lg:px-22 bg-[#f9fbfc] min-h-[100vh] flex flex-col">
 				<section className="flex justify-between items-center">
 					<h1 className="italic md:text-3xl">Employees</h1>
 					<button

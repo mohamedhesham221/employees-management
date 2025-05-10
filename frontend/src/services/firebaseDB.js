@@ -28,7 +28,7 @@ export const getEmployees = async () => {
 }
 // update realtime data base
 export const subscribeToEmployee = (callback) => {
-  const q = query(collection(db, "employees"), orderBy("createdAt", "desc"));
+  const q = query(collection(db, "employees"), orderBy("createdAt", "asc"));
   return onSnapshot(q, (snapshot) => {
     const employees = snapshot.docs.map((doc) => ({
       id: doc.id,
@@ -52,7 +52,13 @@ export const addEmploye = async (data) => {
 // ✅ Update Employe
 export const updateEmploye = async ({ id, data }) => {
   const employeRef = doc(db, "employees", id)
-  await updateDoc(employeRef, { data })
+  const employeSnap = await getDoc(employeRef);
+  if (employeSnap.exists()) {
+    const { createdAt } = employeSnap.data(); // Extract the existing `createdAt`
+    await updateDoc(employeRef, { data, createdAt }); // Preserve `createdAt` while updating other fields
+  } else {
+    console.error("Employee not found");
+  }
 }
 
 // ✅ Delete Employe
