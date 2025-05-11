@@ -10,7 +10,7 @@ const EditModal = ({id}) => {
 			>
 				<div className="modal-box bg-white">
 					<h3 className="font-bold text-lg text-[var(--text-color)]">
-						Update Employe
+						Update Employee
 					</h3>
 					<ModalForm type={"edit"} id={id}/>
 					<div className="modal-action absolute top-0 right-6">

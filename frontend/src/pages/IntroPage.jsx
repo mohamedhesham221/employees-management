@@ -5,7 +5,7 @@ const IntroPage = () => {
 	return (
 		<>
 			<main className="flex justify-center items-center min-h-[90vh] flex-col gap-y-5">
-        <h1 className="flex items-center gap-1 text-lg md:text-2xl text-[var(--text-color)] tracking-in-expand "><span>Employee</span> <img src={Logo} alt="Logo Icon" className="w-12" />  <span>Managment</span> </h1>
+        <h1 className="flex items-center gap-1 text-lg md:text-2xl text-[var(--text-color)] tracking-in-expand "><span>Employees</span> <img src={Logo} alt="Logo Icon" className="w-12" />  <span>Managment</span> </h1>
 				<p className="text-center text-sm md:text-lg text-gray-500 italic">Manage Your Team, Effortlessly.</p>
 
 				<div className="flex gap-6">

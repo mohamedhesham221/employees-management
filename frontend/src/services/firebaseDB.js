@@ -38,40 +38,40 @@ export const subscribeToEmployee = (callback) => {
   });
 };
 
-// ✅ Add Employe to data base
-export const addEmploye = async (data) => {
+// ✅ Add Employee to data base
+export const addEmployee = async (data) => {
   try {
     await addDoc(collection(db, "employees"), { data, createdAt: serverTimestamp() })
-    console.log("Employe added");
+    console.log("Employee added");
   } catch (error) {
-    console.error("Error adding Employe:", error);
+    console.error("Error adding Employee:", error);
   }
   return data
 }
 
-// ✅ Update Employe
-export const updateEmploye = async ({ id, data }) => {
-  const employeRef = doc(db, "employees", id)
-  const employeSnap = await getDoc(employeRef);
-  if (employeSnap.exists()) {
-    const { createdAt } = employeSnap.data(); // Extract the existing `createdAt`
-    await updateDoc(employeRef, { data, createdAt }); // Preserve `createdAt` while updating other fields
+// ✅ Update Employee
+export const updateEmployee = async ({ id, data }) => {
+  const employeeRef = doc(db, "employees", id)
+  const employeeSnap = await getDoc(employeeRef);
+  if (employeeSnap.exists()) {
+    const { createdAt } = employeeSnap.data(); // Extract the existing `createdAt`
+    await updateDoc(employeeRef, { data, createdAt }); // Preserve `createdAt` while updating other fields
   } else {
     console.error("Employee not found");
   }
 }
 
-// ✅ Delete Employe
-export const deleteEmploye = async (id) => {
+// ✅ Delete Employee
+export const deleteEmployee = async (id) => {
   await deleteDoc(doc(db, "employees", id))
 }
 
-// ✅ Get Employe by id
-export const getEmployeById = async (id) => {
+// ✅ Get Employee by id
+export const getEmployeeById = async (id) => {
   try {
-    const employeRef = doc(db, "employees", id);
-    const employeSnap = await getDoc(employeRef);
-    return employeSnap.data()
+    const employeeRef = doc(db, "employees", id);
+    const employeeSnap = await getDoc(employeeRef);
+    return employeeSnap.data()
   } catch (error) {
     console.error("Error message", error);
   }

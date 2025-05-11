@@ -3,13 +3,13 @@ import images from "../utils/images";
 import { formatDate, formatAmount } from "../utils/common";
 import { Link } from "react-router-dom";
 
-// Component to render a single employe row in the table
+// Component to render a single employee row in the table
 
-const EmployeRow = ({ employe, setImpID }) => {
+const EmployeeRow = ({ employee, setImpID }) => {
 	// Decide which icon to show based on employee rate
 	const rateIcon =
-		Number(employe.data.rate) >= 4 ? images.highRate : images.LowRate;
-	// get employe data to edit
+		Number(employee.data.rate) >= 4 ? images.highRate : images.LowRate;
+	// get employee data to edit
 	//open modal depend on its type
 	const openModal = (modalType) => {
 		if (modalType === "update") {
@@ -19,27 +19,27 @@ const EmployeRow = ({ employe, setImpID }) => {
 		} else {
 			document.getElementById("delete_modal").showModal();
 		}
-		setImpID(employe.id);
+		setImpID(employee.id);
 	};
 	return (
 		<>
-			{/* Show the employe data */}
+			{/* Show the employee data */}
 			<tr className="border-b last-of-type:border-0 border-[var(--table-border)] text-center hover:bg-[var(--table-hover-bg)] cursor-pointer">
-				<th>{employe.id.slice(0, 6)}</th>
-				<td className="whitespace-nowrap">{employe.data.name}</td>
-				<td>{employe.data.role}</td>
-				<td>{employe.data.email}</td>
-				<td>{employe.data.phoneNumber}</td>
-				<td>{employe.data.age}</td>
-				<td>{employe.data.country}</td>
-				<td>{formatAmount(employe.data.salary)}</td>
+				<th>{employee.id.slice(0, 6)}</th>
+				<td className="whitespace-nowrap">{employee.data.name}</td>
+				<td>{employee.data.role}</td>
+				<td>{employee.data.email}</td>
+				<td>{employee.data.phoneNumber}</td>
+				<td>{employee.data.age}</td>
+				<td>{employee.data.country}</td>
+				<td>{formatAmount(employee.data.salary)}</td>
 				<td>
 					<span className="flex items-center justify-center">
-						{Number(employe.data.rate)}
+						{Number(employee.data.rate)}
 						<img src={rateIcon} alt="Rate icon" />
 					</span>
 				</td>
-				<td className="whitespace-nowrap">{formatDate(employe.data.date)}</td>
+				<td className="whitespace-nowrap">{formatDate(employee.data.date)}</td>
 				{/* Action dropdown: Edit, Delete, View */}
 				<td className="w-12">
 					<div className="dropdown dropdown-end">
@@ -55,7 +55,7 @@ const EmployeRow = ({ employe, setImpID }) => {
 								<button onClick={() => openModal("update")}>
 									<img
 										src={images.update}
-										alt="Edit employe"
+										alt="Edit employee"
 										className="lg:w-7"
 									/>
 								</button>
@@ -64,17 +64,17 @@ const EmployeRow = ({ employe, setImpID }) => {
 								<button onClick={() => openModal("delete")}>
 									<img
 										src={images.delete}
-										alt="Delete employe"
+										alt="Delete employee"
 										className="lg:w-7"
 									/>
 								</button>
 							</li>
 							{/* View button, navigates to detail page */}
 							<li>
-								<Link key={employe.id} to={`/${employe.id}`}>
+								<Link key={employee.id} to={`/${employee.id}`}>
 									<img
 										src={images.view}
-										alt="View employe details"
+										alt="View employee details"
 										className="lg:w-7"
 									/>
 								</Link>
@@ -87,4 +87,4 @@ const EmployeRow = ({ employe, setImpID }) => {
 	);
 };
 
-export default EmployeRow;
+export default EmployeeRow;

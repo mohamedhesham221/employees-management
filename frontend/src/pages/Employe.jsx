@@ -1,17 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
-import { getEmployeById } from "../services/firebaseDB";
+import { getEmployeeById } from "../services/firebaseDB";
 import Loading from "../components/Loading";
 import PageHeader from "../components/PageHeader";
 import { formatDate, formatAmount } from "../utils/common";
 import images from "../utils/images";
 import Footer from "../components/Footer";
 
-const Employe = () => {
+const Employee = () => {
 	const { id } = useParams();
 	const { data, isLoading, isError } = useQuery({
 		queryKey: ["employees", id],
-		queryFn: () => getEmployeById(id),
+		queryFn: () => getEmployeeById(id),
 	});
 	if (isLoading) return <Loading />;
 	if (isError) return <div className="text-red-500">fetching failed</div>;
@@ -107,4 +107,4 @@ console.log(data);
 	);
 };
 
-export default Employe;
+export default Employee;

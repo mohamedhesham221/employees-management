@@ -111,7 +111,7 @@ const Employees = () => {
 						className="btn bg-[var(--accent-blue)]"
 						onClick={() => (document.getElementById("add_modal").open = true)}
 					>
-						Add Employe <img src={images.add} alt="Add icon" />{" "}
+						Add Employee <img src={images.add} alt="Add icon" />{" "}
 					</button>
 				</section>
 				{/* Filters and Search */}
@@ -128,7 +128,7 @@ const Employees = () => {
 					{!data.length ? (
 						<div className="text-[var(--text-color)] text-3xl flex flex-col justify-center w-full min-h-[50vh] items-center">
 							<p>There is no employees yet !!</p>
-							<p>Add new employe</p>
+							<p>Add new employee</p>
 						</div>
 					) : (
 						// Table with employees data

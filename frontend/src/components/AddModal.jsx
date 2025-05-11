@@ -9,7 +9,7 @@ const AddModal = () => {
 			>
 				<div className="modal-box bg-white">
 					<h3 className="font-bold text-lg text-[var(--text-color)]">
-						Add Employe
+						Add Employee
 					</h3>
 					<ModalForm type={"add"} />
 					<div className="modal-action absolute top-0 right-6">

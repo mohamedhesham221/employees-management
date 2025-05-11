@@ -2,9 +2,9 @@ import { roles } from "../utils/common";
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import {
-	addEmploye,
-	updateEmploye,
-	getEmployeById,
+	addEmployee,
+	updateEmployee,
+	getEmployeeById,
 } from "../services/firebaseDB";
 import * as React from "react";
 import InputField from "./InputField";
@@ -15,11 +15,11 @@ const ModalForm = ({ type, id }) => {
 	// Reset Form after submision
 	React.useEffect(() => {
 		if (!id || id.length === 0) return;
-		const getEmployeDataWillEdit = async () => {
-			const data = await getEmployeById(id);
+		const getEmployeeDataWillEdit = async () => {
+			const data = await getEmployeeById(id);
 			setDataWillEdit(data);
 		};
-		getEmployeDataWillEdit();
+		getEmployeeDataWillEdit();
 	}, [id]);
 	const {
 		address,
@@ -84,14 +84,14 @@ const ModalForm = ({ type, id }) => {
 	]);
 	// add new employee to cach
 	const addMutation = useMutation({
-		mutationFn: addEmploye,
+		mutationFn: addEmployee,
 		onSuccess: () => {
 			queryClient.invalidateQueries({ queryKey: "employees" });
 		},
 	});
 	// update cach employee
 	const updateMutation = useMutation({
-		mutationFn: ({ id, data }) => updateEmploye({ id, data }),
+		mutationFn: ({ id, data }) => updateEmployee({ id, data }),
 		onSuccess: () => {
 			queryClient.invalidateQueries({ queryKey: "employees" });
 		},
@@ -112,7 +112,7 @@ const ModalForm = ({ type, id }) => {
 			<form className="py-4" onSubmit={handleSubmit(onSubmit)} method="dialog">
 				{/* Personal Information Section */}
 				<fieldset className="flex flex-wrap gap-4">
-					<legend className="hidden">Employe information</legend>
+					<legend className="hidden">Employee information</legend>
 					{/* Name Field */}
 					<div className="w-full md:w-[48%]">
 						<InputField
@@ -195,7 +195,7 @@ const ModalForm = ({ type, id }) => {
 				</fieldset>
 				{/* Employee Details Section */}
 				<fieldset className="flex flex-wrap gap-4 mt-6">
-					<legend className="hidden">Employe details</legend>
+					<legend className="hidden">Employee details</legend>
 					{/* Role Selection */}
 					<div className="md:!w-[48%]">
 						<select

@@ -1,11 +1,11 @@
 import images from "../utils/images";
-import { deleteEmploye } from "../services/firebaseDB";
+import { deleteEmployee } from "../services/firebaseDB";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const DeleteModal = ({id}) => {
 const queryClient = useQueryClient();
 	const deleteMutation = useMutation({
-		mutationFn: deleteEmploye,
+		mutationFn: deleteEmployee,
 		onSuccess: () => queryClient.invalidateQueries({queryKey: "employees"})
 	})
 	const onDelete = () => {
